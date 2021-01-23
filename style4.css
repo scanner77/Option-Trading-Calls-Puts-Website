@@ -1,0 +1,150 @@
+:root{
+    --line-border--fill: #3498db ;
+    --line-border--empty: #e0e0e0;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+background-color: #f6f7fb;
+display: relative;
+
+}
+.main-div{
+    position: relative;
+}
+.demo{
+    border: 2px solid blue;
+    display: block;
+    right: 100;
+    bottom: 0;
+}
+
+
+.container5{
+    border: 1px solid red;
+    margin: 40px auto;
+    background-color: lightgreen;
+    z-index: -1;
+    box-shadow: 10px 5px 5px red;
+
+
+}
+.progress5-container{
+    /* border: 1px solid blue; */
+    display:flex;
+    justify-content: space-between;
+    position:relative;
+    margin: 30px auto;
+    width: 90vw;
+    max-width: 100%;
+    z-index: 2;
+
+}
+.progress5-container::before{
+    content: '';
+    /* border: 1px solid red; */
+    background-color: var(--line-border--empty);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    /* transform: translateY(-50%); */
+    height: 4px;
+    width: 100%;
+    z-index: -1;
+    transition: .4s ease;
+
+}
+.progress5{
+    /* border: 1px solid red; */
+    background-color:var(--line-border--fill);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    /* transform: translateY(-50%); */
+    height: 4px;
+    width: 0%;
+    z-index: -1;
+    transition: .4s ease;
+
+}
+
+.circle5{
+    background-color: #fff;
+    color: solid black;
+    border-radius:50%;
+    height:70px;
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    border: 3px solid var(--line-border--empty);
+    transition: .4s  ease;
+    cursor: pointer;
+
+}
+.circle5.active5{
+    border-color: #3498db;
+}
+
+.btn{
+    background-color: var(--line-border--fill);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 8px 30px;
+    margin: 5px;
+    font-size: 14px;
+
+}
+.btn.active{
+    transform: scale(.1);
+}
+.btn.focus{
+    outline: 0;
+}
+.btn:disabled{
+    background-color: var(--line-border--empty);
+    cursor: not-allowed;
+}
+.button-manager{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* MODAL STARTED */
+.modal{
+    background-color: rgba(0,0,0,0.7);;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    display: none;
+
+    
+}
+.modal_contents{
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    padding: 2rem 4rem;
+    color: black;
+    position: relative;
+
+}
+
+.modal_close-bars{
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 50px;
+    cursor: pointer;
+    transform: rotate(45deg);
+}

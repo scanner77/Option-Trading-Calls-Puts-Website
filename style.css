@@ -1,0 +1,345 @@
+:root{
+    --line-border--fill: #3498db ;
+    --line-border--empty: #e0e0e0;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+background-color: #f6f7fb;
+display: relative;
+
+/* align-items: center; */
+/* margin: 0; */
+/* justify-content: space-between; */
+/* overflow: hidden; */
+/* height: 100vh; */
+
+
+}
+.main-div{
+    position: relative;
+}
+.demo{
+    border: 2px solid blue;
+    display: block;
+    right: 100;
+    bottom: 0;
+}
+
+
+.container1{
+   
+    border: 1px solid red;
+    margin: 30px auto;
+    background-color: lightgreen;
+    z-index: -1;
+    box-shadow: 10px 5px 5px red;
+}
+.progress1-container{
+    /* border: 1px solid blue; */
+    display:flex;
+    justify-content: space-between;
+    position:relative;
+    margin: 30px auto;
+    width: 90vw;
+    max-width: 100%;
+    z-index: 2;
+}
+.progress1-container::before{
+    content: '';
+    /* border: 1px solid red; */
+    background-color: var(--line-border--empty);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    /* transform: translateY(-50%); */
+    height: 4px;
+    width: 100%;
+    z-index: -1;
+    transition: .4s ease;
+
+}
+.progress1{
+    /* border: 1px solid red; */
+    background-color:var(--line-border--fill);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    /* transform: translateY(-50%); */
+    height: 4px;
+    width: 0%;
+    z-index: -1;
+    transition: .4s ease;
+
+}
+
+.circle1{
+    background-color: #fff;
+    color: solid black;
+    border-radius:50%;
+    height:70px;
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    border: 3px solid var(--line-border--empty);
+    transition: .4s  ease;
+    cursor: pointer;
+}
+.circle1.active1{
+    border-color: #3498db;
+}
+
+.btn{
+    background-color: var(--line-border--fill);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 8px 30px;
+    margin: 5px;
+    font-size: 14px;
+
+}
+.btn.active{
+    transform: scale(.1);
+}
+.btn.focus{
+    outline: 0;
+}
+.btn:disabled{
+    background-color: var(--line-border--empty);
+    cursor: not-allowed;
+}
+.button-manager{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.heading{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+#ham_menu{
+position: absolute;
+right: 0;
+top: 0;
+cursor: pointer;
+height: 40px;
+width: 40px;
+background-color: #3498db;
+outline: none;
+}
+.fa .fa-bars{
+    height: 30px;
+    width: 30px;
+}
+#first_one_div{
+    /* margin-left: 10px; */
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 0;
+    margin: 4px auto;
+    font-size: 18px;
+}
+
+/* MODAL STARTED */
+.modal{
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    color: white;
+    display: none;  
+}
+
+.modal_contents{
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    padding: 2rem 4rem;
+    color: black;
+    position: relative;
+    /* text-align: center; */
+
+}
+
+.modal_close-bars{
+    position: absolute;
+    top: 0;
+    right: 14px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+/* ------------------MODAL FOR SIGNUP-------------- */
+.signup-modal{
+        background-color: rgba(0,0,0,0.7);
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 3;
+        color: white;
+        display: none;  
+    
+    
+}
+.signup-modal-content{
+width: 500px;
+    height: 500px;
+    background-color: white;
+    padding: 2rem 4rem;
+    color: black;
+    position: relative;
+    text-align: center;
+}
+.close-signup-modal{
+position: absolute;
+top: 0;
+right: 20px;
+font-size: 45px;
+transform: rotate(45deg);
+cursor: pointer;
+}
+.signup-modal-form{
+
+}
+#signup-modal-input1{
+width: 50%;
+height: 30px;
+border: 2px solid black;
+border-radius: 5px;
+cursor: pointer;
+}
+#signup-modal-input2{
+    width: 48%;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+
+    }
+#signup-modal-submit{
+    margin: 15px auto;
+    width: 30%;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: royalblue;
+    transition: 0.3s all ease;
+    color: white;
+    cursor: pointer;
+
+}
+#signup-modal-input3{
+    margin-top: 10px;
+    width:48%;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+#signup-modal-input4{
+    margin-top: 10px;
+    width:48%;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+#signup-modal-submit:hover{
+    background-color: red;
+}
+#signup-modal-submit:active{
+    background-color: green;
+}
+
+
+/* ------------------MODAL FOR SIGN-IN-------------- */
+.signin-modal{
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    color: white;
+    display: none;  
+
+
+}
+.signin-modal-content{
+width: 500px;
+height: 500px;
+background-color: white;
+padding: 2rem 4rem;
+color: black;
+position: relative;
+text-align: center;
+}
+.close-signin-modal{
+position: absolute;
+top: 0;
+right: 20px;
+font-size: 45px;
+transform: rotate(45deg);
+cursor: pointer;
+}
+.signin-modal-form{
+
+}
+
+#signin-modal-submit{
+margin: 15px auto;
+width: 30%;
+height: 30px;
+border: 2px solid black;
+border-radius: 20px;
+background-color: royalblue;
+transition: 0.3s all ease;
+color: white;
+cursor: pointer;
+
+}
+#signin-modal-input3{
+margin-top: 10px;
+width:48%;
+height: 30px;
+border: 2px solid black;
+border-radius: 5px;
+cursor: pointer;
+
+}
+#signin-modal-input4{
+margin-top: 10px;
+width:48%;
+height: 30px;
+border: 2px solid black;
+border-radius: 5px;
+cursor: pointer;
+
+}
+#signin-modal-submit:hover{
+background-color: red;
+}
+#signin-modal-submit:active{
+background-color: green;
+}
+/* ------------------------------------------------------------------------------------------------------------------------ */
+
